@@ -6,7 +6,7 @@ import axios from 'axios'
 
 /* urls */
 const host =
-  // 'http://localhost:8080'
+  //'http://localhost:8080'
   'https://auctions-app.up.railway.app'
 // auth
 const loginUrl = `${host}/users/login`
@@ -106,7 +106,7 @@ export function getAuctionMised(id) {
 }
 
 export function encherir(id,bidid,amount) {
-  return getCall(bididUrl(id,bidid,amount),true)
+  return getCall(bidUrl(id,bidid,amount),true)
 }
 // Categories
 export function getCategories() {

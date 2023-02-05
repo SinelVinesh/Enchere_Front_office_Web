@@ -93,7 +93,7 @@ const routes = [
   { path: '/advancedSearch', name: 'AdvancedSearch', element: AdvancedSearch },
   { path: '/accueil', name: 'AuctionListDesc', element: AuctionListDesc },
   { path: '/mised', name: 'AuctionMised', element: AuctionMised },
-  { path: '/encherir', name: 'Encherir', element: Encherir },
+  { path: '/encherir/:id', name: 'Encherir', element: Encherir },
 ]
 
 export default routes
