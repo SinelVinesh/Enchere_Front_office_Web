@@ -5,7 +5,7 @@ import '../../../../css/gallery.css';
 
 const minDistance = 100000;
 const prixMin = 0;
-const prixMax = 900000;
+const prixMax = 90000000;
 
 const AdvancedSearch = () => {
   const [prix, setprix] = React.useState([prixMin, prixMax]);

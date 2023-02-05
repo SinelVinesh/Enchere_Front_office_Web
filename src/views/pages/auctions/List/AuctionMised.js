@@ -7,7 +7,7 @@ const AuctionMised = () => {
 'http://localhost:8080'
 
 const link =
-'http://localhost:3000'
+'http://localhost:3000/auctions/'
   React.useEffect(() => {
     getAuctionMised(localStorage.getItem('id'))
         .then((data) => {
@@ -26,13 +26,13 @@ const link =
       auctions.map((search,index) => (
         <>
 
-        { search.bidTop &&<div class="gallery">
+        <div class="gallery">
            <a target="_blank" href={link+search.id}>
             {search.images[0].photoPath && <img src={host + search.images[0].photoPath} alt="Forest" width="100" height="100" />}
             {!search.images[0].photoPath && <img src={require("contact.png")} alt="Forest" width="100" height="100" />}
-          </a><div class="desc">{search.description} | {search.bidTop.amount}</div>
+          </a><div class="desc">{search.description}</div>
         
-        </div>}
+        </div>
         </>
       ))
     }</>
