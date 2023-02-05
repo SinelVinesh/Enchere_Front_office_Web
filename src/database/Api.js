@@ -6,14 +6,14 @@ import axios from 'axios'
 
 /* urls */
 const host =
-  //'http://localhost:8080'
-  'https://auctions-app.up.railway.app'
+  'http://localhost:8080'
+  //'https://auctions-app.up.railway.app'
 // auth
 const loginUrl = `${host}/users/login`
 const logoutUrl = `${host}/users/logout`
 // auctions
 const bidUrl = (id,bidid,amount) =>`${auctionsUrl}/bid/${id}&${bidid}&${amount}`
-const getAuctionListDescUrl = `${host}/auctions/recentAuction`
+const getAuctionListDescUrl = (id) =>`${host}/auctions/recentAuction/${id}`
 const advancedSearchUrl = `${host}/auctions/search`
 const auctionStateUrl = `${host}/auctionState`
 const auctionsUrl = `${host}/auctions`
@@ -80,8 +80,8 @@ export const logout = () => {
 }
 
 // Auctions
-export function getAuctionListDesc(){
-  return getCall(getAuctionListDescUrl, true)
+export function getAuctionListDesc(id){
+  return getCall(getAuctionListDescUrl(id), true)
 }
 export const advancedSearch = (data) =>{
   return postCall(advancedSearchUrl,data, true)

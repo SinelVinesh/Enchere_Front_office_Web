@@ -9,7 +9,7 @@ const AuctionListDesc = () => {
   const link =
 'http://localhost:3000/auctions/'
     React.useEffect(() => {
-        getAuctionListDesc()
+        getAuctionListDesc(localStorage.getItem('id'))
           .then((data) => {
             setAuctions(data)
           })
