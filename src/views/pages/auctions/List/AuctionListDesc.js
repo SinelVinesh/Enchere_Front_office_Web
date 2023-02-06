@@ -27,7 +27,7 @@ const AuctionListDesc = () => {
           
 
           <div class="gallery">
-            <a target="_blank" href={link+search.id}>
+            <a target="_blank" href={search.id}>
               { search.images[0].photoPath &&<img src={host+search.images[0].photoPath} alt="Forest" width="100" height="100"/>}
               { !search.images[0].photoPath &&<img src={require("contact.png")} alt="Forest" width="100" height="100"/>}
             </a>

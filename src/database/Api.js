@@ -6,8 +6,8 @@ import axios from 'axios'
 
 /* urls */
 const host =
-  //'http://localhost:8080'
-  'https://auctions-app.up.railway.app'
+  'http://localhost:8080'
+  //'https://auctions-app.up.railway.app'
 // auth
 const loginUrl = `${host}/users/login`
 const logoutUrl = `${host}/users/logout`
@@ -81,6 +81,7 @@ export const logout = () => {
 
 // Auctions
 export function getAuctionListDesc(id){
+  console.log(getAuctionListDescUrl(id))
   return getCall(getAuctionListDescUrl(id), true)
 }
 export const advancedSearch = (data) =>{
