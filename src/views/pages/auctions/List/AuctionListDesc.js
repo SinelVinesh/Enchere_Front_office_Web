@@ -3,17 +3,19 @@ import '../../../../css/gallery.css';
 import * as React from 'react';
 const AuctionListDesc = () => {
     const [auctions, setAuctions] = React.useState([]);
-    const host =
-  'http://localhost:8080'
+
+  const baseUrl = process.env.PUBLIC_URL;
 
   const link =
-'http://localhost:3000/auctions/'
+baseUrl+'/auctions/'
     React.useEffect(() => {
         getAuctionListDesc(localStorage.getItem('id'))
           .then((data) => {
             setAuctions(data)
+            console.log(data)
           })
           .catch((error) => {
+            console.log(error)
           })    
       }, []);
 
@@ -27,14 +29,14 @@ const AuctionListDesc = () => {
           
 
           <div class="gallery">
-            <a target="_blank" href={search.id}>
-              { search.images[0].photoPath &&<img src={host+search.images[0].photoPath} alt="Forest" width="100" height="100"/>}
+            <a target="_blank" href={link+search.id}>
+              { search.images[0].photoPath &&<img src={search.images[0].photoPath} alt="Forest" width="100" height="100"/>}
               { !search.images[0].photoPath &&<img src={require("contact.png")} alt="Forest" width="100" height="100"/>}
             </a>
             {search.description && search.bidTop &&
-            <div class="desc">{search.description} | {search.bidTop.amount}</div>}
+            <div class="desc"><b><p>{search.title}</p></b><p>{search.description}</p><p>Mise actuelle: {search.bidTop.amount}</p></div>}
             {search.description && !search.bidTop &&
-            <div class="desc">{search.description}</div>}
+            <div class="desc"><b><p>{search.title}</p></b><p>{search.description}</p><p>Mise actuelle: {search.startingPrice} AR</p></div>}
           </div>
         
         ))

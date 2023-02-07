@@ -11,10 +11,10 @@ div.gallery {
   
   div.gallery img {
     width: 100%;
-    height: auto;
+    object-fit: cover;
   }
   
   div.desc {
     padding: 15px;
-    height: 150px;
+    height: 250px;
   }

@@ -63,7 +63,7 @@ const Details = ({ title, properties, data, deletable }) => {
               Modifier
             </CButton>
             {deletable && <CButton color={'warning'}>Supprimer</CButton>}
-            {data.auctionState.id==1 && data.appUser.id != localStorage.getItem('id') &&<CButton color={'primary'} onClick={() => navigate('/encherir/'+data.id)}>
+            {data.auctionState.id==2 && data.appUser.id != localStorage.getItem('id') &&<CButton color={'primary'} onClick={() => navigate('/encherir/'+data.id)}>
               Encherir
             </CButton>}
           </CCol>

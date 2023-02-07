@@ -34,7 +34,7 @@ const AuctionDetails = () => {
   console.log(auction)
 
   const properties = [
-     { selector: (auction) => auction.images, label: 'Photos', type: 'image' },
+     //{ selector: (auction) => auction.images, label: 'Photos', type: 'image' },
     { selector: (element) => element.id, label: 'ID', type: 'text' },
     { selector: (element) => element.description, label: 'Description', type: 'text' },
     { selector: (element) => element.category.name, label: 'Categorie', type: 'text' },
